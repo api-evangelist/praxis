@@ -1,10 +1,20 @@
 aid: praxis
 name: Praxis
-description: 'Praxis is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Praxis is a New York-based company building an internet-native community
+  and city-development venture — "an online community starting a new city" — founded
+  in 2019 by Dryden Brown and Charlie Callinan. It operates a membership community
+  at praxisnation.com whose stated purpose is to create a new culture and a resident-owned
+  physical city, and a members-only account portal at portal.praxisnation.com where
+  members view their PRAX holdings and manage their account. In October 2024 Praxis
+  announced $525M in financing toward development of its first city. Praxis is a real-estate,
+  community and smart-cities company, not a software vendor: it publishes no developer
+  program, no API documentation, and no machine-readable API contract on any host it
+  controls.'
 url: https://raw.githubusercontent.com/api-evangelist/praxis/refs/heads/main/apis.yml
+image: https://d3b16n6zj6onqf.cloudfront.net/images/og-image.png
 x-type: company
 x-source: harvest:secondary-market
+x-harvest-listing: https://www.hiive.com/securities/praxis-stock
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
@@ -12,6 +22,12 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Real Estate
+- Smart Cities
+- Communities
+- Membership
+- Urban Development
+- Network State
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +35,45 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/praxis-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/praxis-stock
+  url: https://www.praxisnation.com/
+- type: Blog
+  url: https://www.praxisnation.com/news
+- type: SignUp
+  url: https://www.praxisnation.com/join
+- type: TermsOfService
+  url: https://www.praxisnation.com/legal/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.praxisnation.com/legal/privacy-policy
+- type: Newsletter
+  url: https://praxisnation.substack.com
+- type: Twitter
+  url: https://x.com/praxisnation
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Praxis is a membership community and city-development venture whose only software
+    surface is a members-only account portal at portal.praxisnation.com; its internal
+    Next.js routes under /api/ answer 401 with a null body to anonymous callers, and
+    the company publishes no developer portal, documentation or machine-readable
+    contract on any host it controls.
+  evidence:
+  - url: https://www.praxisnation.com/openapi.json
+    status: 404
+  - url: https://www.praxisnation.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.praxisnation.com/llms.txt
+    status: 404
+  - url: https://portal.praxisnation.com/api/openapi.json
+    status: 401
+  - url: https://www.praxisnation.com/
+    status: 200
+  checked: '2026-08-26'

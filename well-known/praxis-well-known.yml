@@ -1,0 +1,59 @@
+generated: '2026-08-26'
+method: probed
+source: live HTTPS probes of every Praxis-controlled host (2026-08-26)
+note: >-
+  Every /.well-known/ path probed on both Praxis hosts returned 404 (apex) or 404/403
+  (member portal, where a Cloudflare bot challenge answers some paths). No document
+  was served on any path, so NO WellKnown or SecurityTxt pointer is emitted in apis.yml —
+  this file records a verified absence, not a presence.
+hosts:
+- host: www.praxisnation.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: portal.praxisnation.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+    note: Cloudflare interstitial ("Just a moment..."), not a served document
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+    note: Cloudflare interstitial ("Just a moment..."), not a served document
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+    file: null
+    note: Cloudflare interstitial ("Just a moment..."), not a served document
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+    note: Cloudflare interstitial ("Just a moment..."), not a served document
