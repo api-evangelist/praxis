@@ -45,9 +45,9 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
-- Real-Estate
+- Real Estate
 - Smart Cities
-- Communities
+- Community
 - Membership
 - Urban Development
 - Network State
@@ -59,6 +59,7 @@ tags_raw:
 - Membership
 - Urban Development
 - Network State
+- Real-Estate
 apis: []
 maintainers:
 - FN: Kin Lane
